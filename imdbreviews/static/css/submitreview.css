@@ -1,0 +1,71 @@
+		
+   
+body {
+      min-height: 100vh;
+        		background-color: #e8e1e1;
+  		border: 20px solid white;
+}
+
+.review {
+
+
+  margin-left: 500px;
+  margin-top: 30px;
+
+}
+
+.content {
+
+
+margin-top: 10px;
+margin-left: 400px;
+width: 40%;
+
+
+}
+
+
+.pencil {
+
+	width: 60px;
+	height: 60px;
+	margin-left: 580px;
+}
+
+
+.rating {
+
+  text-align: center;
+  font-style: bold;
+  font-size: 20px;
+  margin-top: 10px;
+
+}
+
+.title {
+
+
+	margin-top: 20px;
+	width: 40%;
+	margin-left: 400px;
+}
+
+
+.submit {
+
+ width: 80px;
+ height: 40px;
+ margin-left: 590px;
+ margin-top: 10px;
+ font-size: 20px;
+ border: 0.5px solid gray;
+
+
+}
+
+.submit:hover {
+
+	background-color: lightgray;
+	color: black;
+
+}

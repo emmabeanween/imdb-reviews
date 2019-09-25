@@ -1,0 +1,56 @@
+
+      html, 
+body {
+      min-height: 100vh;
+}
+
+
+  	body {
+
+  		background-color: #e8e1e1;
+  		border: 20px solid white;
+
+
+
+  	}
+
+
+    .form-inline {
+
+
+    	margin-top: 100px;
+    	margin-left: 450px;
+
+    }
+
+   .search {
+     
+     width: 350px;
+     height: 60px;
+     border: 0.5px solid gray;
+     font-size: 35px;
+
+
+   }
+
+   button{
+
+   	height: 60px;
+   	width: 60px;
+   	cursor: pointer;
+   	font-size: 25px;
+
+
+
+
+   }
+
+   button:hover {
+   	background-color: lightyellow;
+   }
+
+   .link {
+    float: right;
+    margin-right: 20px;
+    margin-top: 20px;
+   }

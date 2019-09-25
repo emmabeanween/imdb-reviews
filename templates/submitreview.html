@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel = "stylesheet" type = "text/css" href = "{% static 'css/submitreview.css' %}">
+</head>
+<body>
+
+
+<a href="javascript:history.back()"><img src="https://img.icons8.com/carbon-copy/50/000000/back.png"></a>
+
+	<h1 class="review"> submit review </h1>
+	<img class="pencil" src="https://img.icons8.com/plasticine/100/000000/pencil.png">
+    <form method="POST">
+    {% csrf_token %}
+    <div class="rating">what would you rate {{title}}?</br>
+    {{reviewform.rating}}
+    </div>
+    <div class="title">{{reviewform.title}}</div>
+     <div class="content">{{reviewform.content}}</div>
+
+     <input type='submit' class="submit" value="submit" />
+    </form> 
+
+</body>
+</html>

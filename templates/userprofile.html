@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+			 <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+   <link rel = "stylesheet" type = "text/css" href = "{% static 'css/userprofile.css' %}">
+</head>
+<body>
+
+
+<a href="javascript:history.back()"><img src="https://img.icons8.com/carbon-copy/50/000000/back.png"></a>
+
+
+<h1 class="user"> {{user}} </h1>
+
+<img class="person" src="https://img.icons8.com/cotton/64/000000/person-male--v2.png">
+<div class="join">joined <b> {{dateJoined}} </b> </div>
+<hr>
+<div class="reviews"> reviews 
+
+ <b>({{numReviews}})</b></div>
+
+<form method = 'GET' class="sort">
+
+{{userSortForm.sort}}
+{{userSortForm.direction}}
+
+</form>
+
+
+{%   for review, title, id in userReviews   %}
+<div class="container" id="cards">
+  <div class="card bg-light text-dark">
+    <div class="card-body">
+    	    <div class="date"> reviewed <a href='http://127.0.0.1:8000/title/{{id}}'>{{title}}</a> on {{review.review_date}} </div>
+    	</br>
+    	<div class="title"><b>{{review.title}}</b></div>
+    	<div class="rating"><b>{{review.rating}}/10</b></div>
+    	<div class="content">{{review.content}}</div>
+    <div class="number"><b>{{review.helpfulness}}</b> out of <b>{{review.number_voted}}</b> found this review helpful </div>
+  </div>
+</div>
+</div>
+</br>
+{%   endfor   %}
+
+
+
+</body>
+</html>

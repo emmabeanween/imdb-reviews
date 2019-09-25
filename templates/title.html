@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+		  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel = "stylesheet" type = "text/css" href = "{% static 'css/title.css' %}">
+  
+<body>
+
+
+<a href="javascript:history.back()"><img src="https://img.icons8.com/carbon-copy/50/000000/back.png"></a>
+
+</br></br></br>
+<h1>{{selected_movie.title}}</h1>
+</br>
+<span class="release">released  {{selected_movie.release_date}}</span>
+</br>
+</br>
+<h2>synopsis</h2>
+</br>
+    <div class="summary">{{selected_movie.summary}}</div></br></br>
+    <button type="button" class="actors" data-toggle="collapse" data-target="#actors">Actors</button></br></br>
+<div id="actors" class="collapse">
+  <table class="table table-hover" id="table">
+    {%  for actor in actors  %}
+    <tbody>
+      <tr>
+        <td>{{actor}}</td>
+      </tr>
+      {%  endfor   %}
+    </tbody>
+  </table>
+</div>
+
+ <button type="button" class="reviews"  onclick="location.href='http://127.0.0.1:8000/title/{{movieid}}/reviews'">user reviews</button>
+
+
+</body>
+</html>

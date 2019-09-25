@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+  <link rel = "stylesheet" type = "text/css" href = "{% static 'css/home.css' %}">
+
+</head>
+<body>	
+
+	{% include "header.html" %}
+  </br>
+	<h1>movie-db</h1>
+ </br>
+  <img src="https://img.icons8.com/doodle/48/000000/popcorn.png" class="popcorn">
+
+</br></br></br>
+<div class="cards">
+
+
+  
+    <div class="card bg-warning">
+      <div class="card-body text-center">
+        <p class="card-text">search for your favorite movie titles.</p>
+      </div>
+    </div>
+   
+</br>
+  
+ <div class="card bg-warning">
+      <div class="card-body text-center">
+        <p class="card-text">review and rate them as you go.</p>
+      </div>
+    </div>
+  
+</div>
+
+</br>
+
+{% if messages %}
+    {% for message in messages %}
+ <div class="alert alert-danger alert-dismissible" id="alert">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+<div> {{ message }}</div>
+  </div>
+    {% endfor %}
+{% endif %}
+
+
+
+
+
+</body>
+</html>

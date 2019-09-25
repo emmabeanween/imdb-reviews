@@ -1,0 +1,109 @@
+
+		h1 {
+			color: navy;
+			font-size: 50px;
+			text-align: center;
+			margin-top: 50px;
+			animation: glow 2s infinite alternate;
+		}
+
+		@keyframes glow {
+    to {
+        text-shadow: 0 0 10px #ffe521;
+    }
+}
+
+		h2 {
+			color: navy;
+			font-size: 40px;
+			margin-left: 560px;
+			margin-top: 100px;
+			animation: glow 2s infinite alternate;
+		}
+
+        h3 {
+			color: navy;
+			font-size: 30px;
+			margin-left: 600px;
+			margin-top: 100px;
+			animation: glow 2s infinite alternate;
+		}
+
+
+		
+		#table {
+
+			width: 30%;
+			margin-left: 450px;
+			box-shadow: 3px 3px 5px 6px #a19c9c; 
+
+
+		}
+
+		.summary {
+
+			height: 30%;
+			width: 400px;
+			font-size: 20px;
+			overflow-wrap: break-word;
+			background-color: #faf5f5;
+			border: 1px solid black;
+			box-shadow: 3px 3px 5px 6px #a19c9c; 
+			padding: 10px;
+			margin-left: 450px;
+			border-radius: 5%;
+		}
+
+		tr, th{
+			border: 2px solid black;
+			background-color: white;
+		}
+
+		.actors{
+			width: 100px;
+			border-radius: 10%;
+			background-color: darkblue;
+			margin-left: 580px;
+			color: white;
+			height: 30px;
+			font-size: 15px;
+			border: 0.5px solid black;
+			box-shadow: 3px 3px 5px 6px #a19c9c; 
+
+		}
+
+		.actors:hover {
+			background-color: yellow;
+			color: black;
+		}
+
+
+		.release {
+
+			color: navy;
+			font-size: 15px;
+			font-style: italic;
+			margin-left: 500px;
+
+		}
+
+		.reviews {
+
+			width: 100px;
+			border-radius: 10%;
+			background-color: darkblue;
+			margin-left: 580px;
+			color: white;
+			height: 60px;
+			font-size: 15px;
+			border: 0.5px solid black;
+			box-shadow: 3px 3px 5px 6px #a19c9c; 
+
+           
+		}
+
+
+      .reviews:hover {
+			background-color: yellow;
+			color: black;
+		}

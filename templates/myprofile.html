@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel = "stylesheet" type = "text/css" href = "{% static 'css/myprofile.css' %}">
+
+</head>
+
+
+
+<body>
+
+
+<a href="javascript:history.back()"><img src="https://img.icons8.com/carbon-copy/50/000000/back.png"></a>
+
+<h1>my profile</h1>
+<img class="movie" src="https://img.icons8.com/dotty/80/000000/movie.png">
+</br>
+</br>
+
+<div class="info">
+	<ul>
+ <li>you joined <b>{{since_joined}}</b> ago </li>
+ <li>you have <b>{{number_reviews}}</b> movie reviews</li>
+ <li><a href='http://127.0.0.1:8000/userprofile/{{user}}'> view your reviews </a> </li>
+ <li><a class="delete" href='#' onclick="deleteaccount();"> delete account </a>
+
+</ul>
+</div>
+
+
+<script>
+function deleteaccount() {
+
+
+// alert, ajax request if yes
+var myDelete = confirm("Are you sure you want to delete your account?");
+  if (myDelete)
+      
+      // send ajax request
+
+  
+
+
+}
+
+
+</script>
+
+
+
+</body>
+</html>

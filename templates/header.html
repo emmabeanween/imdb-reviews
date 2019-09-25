@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+	  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel = "stylesheet" type = "text/css" href = "{% static 'css/header.css' %}">
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  
+  	
+</head>
+<body>
+
+
+
+
+{% if session is None %}
+<a class="link" href='http://127.0.0.1:8000/home'>home</a>
+<a class="link" href='http://127.0.0.1:8000/signupandlogin'>sign up/log in</a>
+{% else  %}
+<a class="link" href='http://127.0.0.1:8000/home'>home</a>
+<a class="link" href='http://127.0.0.1:8000/myprofile'>me</a>
+<a class="link" href='http://127.0.0.1:8000/logout'>log out</a>
+{% endif  %}
+
+<form method="GET" class="form-inline" action="http://127.0.0.1:8000/search">
+<input type="search" name="query" value="{{query}}" class="search" onfocus="sendRequest()"><button type="submit"><i class="fa fa-search"></i></button>
+	</form>
+
+
+<script type="text/javascript">
+	
+function sendRequest(){
+
+// filter the user's search for movie titles in real time
+var searchData = $(".search").val();
+// the search query
+
+$.ajax({
+ data: JSON.stringify(searchData),
+method: 'POST',
+success: function(data){
+var array = data.split('       ');
+console.log(array);
+// autocomplete all movie titles containing the user's searched letters
+$( ".search" ).autocomplete({
+      source: array
+    });
+
+
+
+}
+
+});
+
+}
+</script>
+
+
+</body>
+</html>

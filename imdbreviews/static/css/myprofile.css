@@ -1,0 +1,52 @@
+  html, 
+body {
+      min-height: 100vh;
+}
+
+
+  	body {
+
+  		background-color: #e8e1e1;
+  		border: 20px solid white;
+
+
+  	}
+
+  	h1 {
+     		text-align: center;
+  		margin-top: 80px;
+  	}
+
+  	.movie {
+       
+       margin-left: 570px;
+       margin-top: 20px;
+
+  	}
+
+  	.info {
+
+        width: 350px;
+        height: 220px;
+        border: 0.5px solid gray;
+        background-color: lightgray;
+        margin-left: 450px;
+        padding: 10px 20px;
+        font-size: 25px;
+
+  	}
+
+  	a {
+      
+     
+     text-decoration: none !important;
+
+
+  	}
+
+
+  	.delete, .delete:hover {
+
+  		color: red;
+  	}
+

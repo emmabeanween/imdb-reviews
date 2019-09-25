@@ -1,0 +1,77 @@
+		
+   
+body {
+      min-height: 100vh;
+        		background-color: #e8e1e1;
+  		border: 20px solid white;
+}
+
+
+ 
+
+   .user {
+
+
+     text-align: center;
+     margin-top: 100px;
+
+   }
+
+   .person {
+
+      width: 100px;
+      height: 100px;
+      margin-left: 550px;
+   }
+
+
+   .join {
+
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
+
+   }
+
+   .reviews {
+
+    font-size: 20px;
+    margin-left: 10px;
+
+
+   }
+
+  
+  	
+  #cards {
+
+   margin-top: 30px;
+
+  }
+
+  ul {
+
+  	list-style:none;
+  	float: right;
+  	margin-right: 980px;
+
+  }
+
+  li {
+
+   display: inline;
+
+
+  }
+
+  .rating {
+  	font-size: 15px;
+  }
+
+  .title {
+  	font-size: 25px;
+  }
+
+  .number {
+  	margin-top: 5px;
+  }

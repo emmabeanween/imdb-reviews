@@ -1,0 +1,57 @@
+
+      html, 
+body {
+      min-height: 100vh;
+}
+
+
+  	body {
+
+  		background-color: #e8e1e1;
+  		border: 20px solid white;
+
+
+  	}
+
+    h1 {
+
+      text-align: center;
+      margin-top: 100px;
+      color: navy;
+
+    }
+
+
+   .review {
+
+    width: 40%;
+
+   }
+
+   .title {
+
+    font-size: 22px;
+   }
+
+    .radio{
+    display:inline-block;
+    list-style: none;
+    }
+
+
+     ul {list-style:none;}
+
+
+    .rating {
+
+     font-size: 15px;
+
+    }
+
+
+    .submit {
+
+      margin-left: 550px;
+      color: black;
+
+    }

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+	  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel = "stylesheet" type = "text/css" href = "{% static 'css/reviews.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  	
+</head>
+<body>
+
+<a href="http://127.0.0.1:8000/title/{{movieid}}"><img src="https://img.icons8.com/carbon-copy/50/000000/back.png"></a>
+
+<h1>user reviews for {{title}} </h1>
+</br>
+<div class="submit"> <a href="http://127.0.0.1:8000/title/{{movieid}}/submitreview"> submit a review </a></div>
+</br>
+
+<form method="GET">
+
+{%  csrf_token  %}
+
+{{form.sort}}
+{{form.rating}}
+{{form.direction}}
+
+
+</form>
+
+
+{% if messages %}
+    {% for message in messages %}
+ <div class="alert alert-danger alert-dismissible" id="alert">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+<div> {{ message }}</div>
+  </div>
+    {% endfor %}
+{% endif %}
+
+
+
+
+
+{% for review in reviews %}
+
+
+</br>
+ <div class="card bg-danger text-black">
+    <div class="card-body" class="review"><b><span class="title">{{review.title}}</span></b></br>
+    <span class="rating"><b>{{review.rating}}/10</b></span>
+    </br>
+  
+  <span> reviewed by <a href='http://127.0.0.1:8000/userprofile/{{review.user_reviewed}}'>{{review.user_reviewed}}</a> on {{review.review_date}} </span>
+  </br></br>
+    {{review.content}}
+
+  </br>
+ <b>{{review.helpfulness}}</b> out of <b>{{review.number_voted}}</b> found this review helpful
+ {%  if session is None   %}
+ <div><a href='http://127.0.0.1:8000/signupandlogin'>sign in </a> to vote </div>
+ {%  else  %}
+ <div> was this review helpful? 
+  <form>
+  <input type = 'submit' value="yes" class="yes" onclick=" return submitvote('yes' + ' ' +  '{{review.review_id}}')" />
+  <input type = 'submit' value="no" class="no" onclick="return submitvote('no' + ' ' +  '{{review.review_id}}')"/>
+</form>
+   <div class='message'></div>
+    </div>
+ {%  endif  %}
+
+
+  </div>
+</div>
+</br>
+{% endfor %}
+
+
+
+</br></br>
+
+
+
+<script>
+
+
+
+
+  
+function submitvote(vote) {
+
+
+var split = vote.split(' ');
+vote = split[0];
+review_id  = split[1];
+
+$.ajax({
+      type: "POST",
+      data: {
+        'csrf_token': '{{csrf_token}}',
+        'vote': vote,
+        'review_id': review_id
+      },
+
+      success: function (data) {
+        $(".message").html(data);
+      }
+    });
+
+return false;
+
+}
+
+</script>
+  
+
+
+
+</body>
+</html>

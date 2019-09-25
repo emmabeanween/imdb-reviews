@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+	  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel = "stylesheet" type = "text/css" href = "{% static 'css/search.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  	
+</head>
+<body>
+
+
+ {%  include 'header.html'  %}
+
+
+<h1 class="result">showing all search results for '{{query}}' </h1></br></br>
+
+{%   for movie in current_movies   %}
+<div class="outer">
+<div><a class="title" href="{% url 'myTitle' movie.movie_id %}">{{movie.title}}</a></div>
+<div class="year">{{movie.release_date.year}}</div>
+</div>
+</br>
+
+{%    endfor      %}
+
+
+
+{% if current_movies.has_next and current_movies.has_previous  %}
+<div class="pagination"><a href="?query={{query}}&page={{current_movies.previous_page_number}}"  id="link" >prev</a><a href="?query={{query}}&page={{current_movies.next_page_number}}" id="link">next</a></div>
+
+{%  elif current_movies.has_previous   %}
+<div class="pagination"><a href="?query={{query}}&page={{current_movies.previous_page_number}}"  id="link" >prev</a></div>
+
+
+{%  elif current_movies.has_next   %}
+<div class="pagination"><a href="?query={{query}}&page={{current_movies.next_page_number}}"  id="link" >next</a></div>
+
+
+
+{%  endif  %}
+
+
+
+
+
+</body>
+</html>

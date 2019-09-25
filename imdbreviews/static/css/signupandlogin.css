@@ -1,0 +1,90 @@
+
+
+      html, 
+body {
+      min-height: 100vh;
+}
+
+
+  	body {
+
+  		background-color: #e8e1e1;
+  		border: 20px solid white;
+
+
+  	}
+
+  	.register {
+
+
+  		width: 30%;
+  		background-color: darkblue;
+  		padding: 10px 20px;
+  		border-radius: 5%;
+  		box-shadow: 0px 0px 10px #ccc;
+  		float: left;
+      margin-left: 250px;
+  		margin-top: 100px;
+      display: inline-block;
+
+
+       
+
+  	}
+
+  	.login {
+
+
+  		width: 30%;
+  		background-color: darkblue;
+  		padding: 10px 20px;
+  		border-radius: 5%;
+  		box-shadow: 0px 0px 10px #ccc;
+  		margin-top: 100px;
+      display: inline-block;
+      margin-left: 50px;
+
+
+       
+
+  	}
+
+  	label {
+
+  		color: white;
+  	}
+
+
+    span {
+    	color: gold;
+    	font-size: 20px;
+    	margin-left: 50px;
+    	
+    }
+
+   #id_username {
+
+    width: 280px;
+    border-radius: 5%;
+    height: 35px;
+   }
+
+   #id_password {
+
+    width: 280px;
+    border-radius: 5%;
+    height: 35px;
+   }
+
+   #id_confirmedpassword {
+    width: 280px;
+    border-radius: 5%;
+    height: 35px;
+
+   }
+
+
+  h1 {
+    text-align: center;
+    margin-top: 30px;
+  }
