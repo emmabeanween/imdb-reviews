@@ -25,5 +25,4 @@ A very small web app which mimics a basic movie database where users log in and 
  <img src="https://raw.githubusercontent.com/emmabeanween/imdb-reviews/master/images/screenshotsix.png" 
  width="550" height="300"></br>
  
- <img src="https://raw.githubusercontent.com/emmabeanween/imdb-reviews/master/images/screenshotten.png" 
- width="550" height="300"></br>
+
